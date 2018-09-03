@@ -18,6 +18,7 @@
     - If you are on Windows this won't work. Please use Remix to get the ABI.
     - Use `npm run build:contracts` to compile and extract the ABI, you will see `*.abi` files generated in `client/src/contracts`
     - You can copy the contents of a `*.abi` file and assign it to a variable in `client/src/constants` like this: `const abi = JSON.parse(<ABI string>)`. If you can find a better method for importing the *.abi files let us know :)
+    - You only really need the Dashboard ABI, you can use the others if you wish.
 5. Run client (`client/`)
     - `npm install` (if you haven't already)
     - `npm run start`
