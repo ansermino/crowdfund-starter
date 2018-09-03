@@ -8,7 +8,9 @@
     - Contracts are in `client/src/contracts`
     - You will need the `development` setup, you can add testnets if you want
     - Consider using a soft link (shortcut) so `solidity/contracts` and `client/src/contracts` remain in sync. (eg. `ln -s solidity/contracts/ client/src`)
+    - You will need to delete `solidity/contracts/.placeholder`
 2. Deploy contracts to ganache-cli
+    - `truffle deploy --network development`
     - Use the mneumonic (seed phrase) from MetaMask `ganache-cli -m "<mneumonic>"` (make sure to use quotes!). This will mean that the accounts provided by ganache are the same as the ones in MetaMask
     - Make note of the addresses the contracts are deployed to
 3. Connect MetaMask to ganache (choose `Private Network`)
@@ -54,6 +56,14 @@
 >   }
 > ```
 - Some contract calls might return BigNumber type. You can use `.toString()` to make them usable. If you print a BigNumber it might look like this: `<BN: c>`
+
+### React/ES6
+- To use a variable or object in another file you must:
+    - Export it from its file `export const x = ...` or `export default MyComponent`
+    - Import it: `import MyComponent from './MyComponent'`
+- Props are parameters we can pass into a component
+    - If I use `<SomeComponent name='hey' /> then I can access `this.props.name` inside SomeComponent
+- You must use `this.setState({name: 'satoshi'})` to change the state of the component. Note: you only need to include the variables you want to change
 
 ### Interacting With Contract
 - You can use `truffle console` to interact with deployed contracts for testing
