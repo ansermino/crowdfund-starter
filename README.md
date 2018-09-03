@@ -68,6 +68,7 @@
     - If I use `<SomeComponent name='hey' />` then I can access `this.props.name` inside SomeComponent
 - You must use `this.setState({name: 'satoshi'})` to change the state of the component. Note: you only need to include the variables you want to change
 - `npm start` will setup a local web server. When you make changes to the code it should reload the project in your browser
+- To redirect to a page you can use `this.props.history.push('/')` inside any component.
 
 
 ### Truffle
