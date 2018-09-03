@@ -15,7 +15,7 @@
 3. Connect MetaMask to ganache (choose `Private Network`)
 4. Compile the ABI and add it to `client/src/constants/constants.js`
     - `npm install`
-    - If you are on Windows, modify `client/package.json` so that `build:contract` uses `\` instead of `/`
+    - If you are on Windows this won't work. Please use Remix to get the ABI.
     - Use `npm run build:contracts` to compile and extract the ABI, you will see `*.abi` files generated in `client/src/contracts`
     - You can copy the contents of a `*.abi` file and assign it to a variable in `client/src/constants` like this: `const abi = JSON.parse(<ABI string>)`. If you can find a better method for importing the *.abi files let us know :)
 5. Run client (`client/`)
