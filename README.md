@@ -1,10 +1,9 @@
 # CrowdFund
 
-## Overview
-
 ## Steps
 
 1. Setup truffle project in `/solidity`
+    - Recommend using `truffle unbox`
     - Contracts are in `client/src/contracts`
     - You will need the `development` setup, you can add testnets if you want
     - Consider using a soft link (shortcut) so `solidity/contracts` and `client/src/contracts` remain in sync. (eg. `ln -s solidity/contracts/ client/src`)
@@ -20,7 +19,7 @@
 5. Run client (`client/`)
     - `npm install`
     - `npm run start`
-6. Implement web3 funtionality (see `// TODO: ...`)
+6. Implement web3 funtionality (see `// TODO: ...` in `client/src/components/*`)
     - Get all campaigns and display them on the home page (`client/src/components/Capaigns.jsx`)
     - Add new campaigns on the `/new` page (`client/src/components/newCampaign.jsx`)
     - Ability to donate to campaigns (`client/src/components/DonateModal.jsx`)
@@ -64,10 +63,21 @@
 - Props are parameters we can pass into a component
     - If I use `<SomeComponent name='hey' />` then I can access `this.props.name` inside SomeComponent
 - You must use `this.setState({name: 'satoshi'})` to change the state of the component. Note: you only need to include the variables you want to change
+- `npm start` will setup a local web server. When you make changes to the code it should reload the project in your browser
 
 ### Interacting With Contract
 - You can use `truffle console` to interact with deployed contracts for testing
 - eg: `ContractA.at('<address>').funtion1(<params>)`
+
+### Truffle
+- You will need to deploy the Dashboard so that it is aware of the factory:
+```
+module.exports = function(deployer) {
+  deployer.deploy(Factory).then(() => {
+    deployer.deploy(Dashboard, Factory.address)
+  })
+};
+```
 
 ### MetaMask
 - MetaMask does not support async calls (only callbacks)
