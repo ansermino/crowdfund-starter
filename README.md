@@ -62,7 +62,7 @@
     - Export it from its file `export const x = ...` or `export default MyComponent`
     - Import it: `import MyComponent from './MyComponent'`
 - Props are parameters we can pass into a component
-    - If I use `<SomeComponent name='hey' /> then I can access `this.props.name` inside SomeComponent
+    - If I use `<SomeComponent name='hey' />` then I can access `this.props.name` inside SomeComponent
 - You must use `this.setState({name: 'satoshi'})` to change the state of the component. Note: you only need to include the variables you want to change
 
 ### Interacting With Contract
