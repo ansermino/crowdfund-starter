@@ -24,6 +24,8 @@ class Campaigns extends React.Component{
      * TODO: Fetch all campaigns and add them to the components state with `this.setState({<params>})`
      * This function is called before the page loads
      */
+    this.setState({campaigns: exampleCampaigns()})
+    //
   }
   render () {
     if(this.state.campaigns.length === 0) {
@@ -50,7 +52,6 @@ const getCampaign = async (address) => {
    * TODO: Fetch campaign info. See Campaign component below. Keep in mind it expects specific property names (props).
    * Use the examples below as a template.
    */
-  return exampleCampaigns()
 }
 
 const exampleCampaigns = () => {
