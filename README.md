@@ -5,14 +5,15 @@
 ## Steps
 
 1. Setup truffle project in `/solidity`
-    - you will need the `development` setup, you can add testnets if you want
-    - consider using a soft link (shortcut) so `solidity/contracts` and `client/src/contracts` remain in sync. (eg. `ln -s solidity/contracts/ client/src`)
+    - Contracts are in `client/src/contracts`
+    - You will need the `development` setup, you can add testnets if you want
+    - Consider using a soft link (shortcut) so `solidity/contracts` and `client/src/contracts` remain in sync. (eg. `ln -s solidity/contracts/ client/src`)
 2. Deploy contracts to ganache-cli
     - Use the mneumonic (seed phrase) from MetaMask `ganache-cli -m "<mneumonic>"` (make sure to use quotes!). This will mean that the accounts provided by ganache are the same as the ones in MetaMask
     - Make note of the addresses the contracts are deployed to
 3. Connect MetaMask to ganache (choose `Private Network`)
 4. Compile the ABI and add it to `client/src/constants/constants.js`
-    - use `npm run build:contracts` to compile and extract the ABI, you will see `*.abi` files generated in `client/src/contracts`
+    - Use `npm run build:contracts` to compile and extract the ABI, you will see `*.abi` files generated in `client/src/contracts`
     - You can copy the contents of a `*.abi` file and assign it to a variable in `client/src/constants` like this: `const abi = JSON.parse(<ABI string>)`. If you can find a better method for importing the *.abi files let us know :)
 5. Run client (`client/`)
     - `npm install`
