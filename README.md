@@ -18,10 +18,10 @@
 5. Run client (`client/`)
     - `npm install`
     - `npm run start`
-6. Implement web3 funtionality (see `// TODO: ...`
+6. Implement web3 funtionality (see `// TODO: ...`)
     - Get all campaigns and display them on the home page (`client/src/components/Capaigns.jsx`)
     - Add new campaigns on the `/new` page (`client/src/components/newCampaign.jsx`)
-    - Ability to donate to campaigns ('client/src/components/DonateModal.jsx`)
+    - Ability to donate to campaigns (`client/src/components/DonateModal.jsx`)
     - Make sure to display readable units of time (ie. not seconds)
 7. Implement IPFS image hosting (optional)
     - Supply the IPFS hash as an additional field when creating a campaign. Modifications to the contracts will be necessary to store this
