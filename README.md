@@ -41,15 +41,17 @@
 
 - Callbacks can be ugly. Here's a way to use them like promises:
 > ```
-> let value = await new Promise((resolve, reject) => {
->   contract.getValue((err, data) => {
->      if(err) {
->        reject(err)
->      } else {
->        resolve(data.toString())
->      }
+> const getValue = async () {
+>     let value = await new Promise((resolve, reject) => {
+>     contract.getValue((err, data) => {
+>        if(err) {
+>          reject(err)
+>        } else {
+>          resolve(data.toString())
+>        }
+>      })
 >    })
->  })
+>   }
 > ```
 - Some contract calls might return BigNumber type. You can use `.toString()` to make them usable. If you print a BigNumber it might look like this: `<BN: c>`
 
