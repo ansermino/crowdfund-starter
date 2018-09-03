@@ -65,11 +65,9 @@
 - You must use `this.setState({name: 'satoshi'})` to change the state of the component. Note: you only need to include the variables you want to change
 - `npm start` will setup a local web server. When you make changes to the code it should reload the project in your browser
 
-### Interacting With Contract
-- You can use `truffle console` to interact with deployed contracts for testing
-- eg: `ContractA.at('<address>').funtion1(<params>)`
 
 ### Truffle
+- You can use `truffle console` to interact with deployed contracts for testing (eg: `ContractA.at('<address>').funtion1(<params>)`)
 - You will need to deploy the Dashboard so that it is aware of the factory:
 ```
 module.exports = function(deployer) {
@@ -78,6 +76,7 @@ module.exports = function(deployer) {
   })
 };
 ```
+- Note: you do not need to deploy the Campaign contract, the dashboard/factory will do this for you
 
 ### MetaMask
 - MetaMask does not support async calls (only callbacks)
