@@ -14,10 +14,12 @@
     - Make note of the addresses the contracts are deployed to
 3. Connect MetaMask to ganache (choose `Private Network`)
 4. Compile the ABI and add it to `client/src/constants/constants.js`
+    - `npm install`
+    - If you are on Windows, modify `client/package.json` so that `build:contract` uses `\` instead of `/`
     - Use `npm run build:contracts` to compile and extract the ABI, you will see `*.abi` files generated in `client/src/contracts`
     - You can copy the contents of a `*.abi` file and assign it to a variable in `client/src/constants` like this: `const abi = JSON.parse(<ABI string>)`. If you can find a better method for importing the *.abi files let us know :)
 5. Run client (`client/`)
-    - `npm install`
+    - `npm install` (if you haven't already)
     - `npm run start`
 6. Implement web3 funtionality (see `// TODO: ...` in `client/src/components/*`)
     - Get all campaigns and display them on the home page (`client/src/components/Capaigns.jsx`)
@@ -68,7 +70,7 @@
 
 ### Truffle
 - You can use `truffle console` to interact with deployed contracts for testing (eg: `ContractA.at('<address>').funtion1(<params>)`)
-- You will need to deploy the Dashboard so that it is aware of the factory:
+- You will need to deploy the Dashboard so that it is aware of the Factory:
 ```
 module.exports = function(deployer) {
   deployer.deploy(Factory).then(() => {
@@ -76,7 +78,7 @@ module.exports = function(deployer) {
   })
 };
 ```
-- Note: you do not need to deploy the Campaign contract, the dashboard/factory will do this for you
+- Note: you do not need to deploy the Campaign contract, the Dashboard/Factory will do this for you
 
 ### MetaMask
 - MetaMask does not support async calls (only callbacks)
